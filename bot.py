@@ -100,7 +100,7 @@ def handle_file(update: Update, context: CallbackContext):
 
 # --- Запуск ---
 if __name__ == '__main__':
-    updater = Updater("TELEGRAM_TOKEN", use_context=True)
+    updater = Updater(TELEGRAM_TOKEN, use_context=True)
     dp = updater.dispatcher
     dp.add_handler(MessageHandler(Filters.document | Filters.photo, handle_file))
     logging.info("🤖 Бот запущен")
