@@ -1,0 +1,10 @@
+services:
+  - type: worker
+    name: telegram-tesseract-bot
+    env: python
+    plan: free
+    buildCommand: "apt-get update && apt-get install -y tesseract-ocr libtesseract-dev poppler-utils unzip tesseract-ocr-kaz && pip install -r requirements.txt"
+    startCommand: "python bot.py"
+    envVars:
+      - key: TELEGRAM_TOKEN
+        value: 7603502427:AAF-CDq-V_KNY14ezNEpJK5rCjkKDBbyCM8
